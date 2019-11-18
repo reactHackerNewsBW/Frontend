@@ -9,21 +9,20 @@ import {
 
 import Login from "./components/tempLog";
 import Register from "./components/tempReg";
+import List from "./components/tempList";
 import './App.css';
 
 function App() {
 	return (
-
 		<Router>
 			<div className="App">
 				<p><Link to="/login">Login to existing</Link></p>
 				<p><Link to="/register">Register new</Link></p>
 			</div>
-			<Switch>
-				<Route exact path="/login" component={Login} />
-				<Route path="/register" component={Register} />
-				{/* <Route render={() => { return 404 }} /> */}
-			</Switch>
+			<Route exact path="/login" component={Login} />
+			<Route exact path="/register" component={Register} />
+			<Route exact path="/list" component={List} />
+			{/* <Route render={() => { return 404 }} /> */}
 		</Router>
 	);
 }
