@@ -38,28 +38,29 @@ export default function Register(props) {
 				// props.history.push("list");
 			})
 			.catch(err => clg(`>>> PROBLEM -- Register > axios :: ${err}`))
-}
+	}
 
-useEffect(() => {
-	sessionStorage.getItem("token") ? setIsRegged(true) : setIsRegged(false);
-	/* 
-	CHECK
-	if Logged in, bypass Register page, directly to list
+	useEffect(() => {
+		sessionStorage.getItem("token") ? setIsRegged(true) : setIsRegged(false);
+		/* 
+		CHECK
+		if Logged in, bypass Register page, directly to list
+	
+		<Redirect /> from react in the return()
+		 */
+	}, [])
 
-	<Redirect /> from react in the return()
-	 */
-}, [])
-
-return (
-	/*
-	WATCH FOR CHANGE
-	*/
-	<>
-		<form onSubmit={registerAction}>
-			<input type="text" name="username" value={register.username} onChange={doChange} />
-			<input type="password" name="password" value={register.password} onChange={doChange} />
-			<button>login</button>
-		</form>
-	</>
-)
+	return (
+		/*
+		WATCH FOR CHANGE
+		*/
+		<>
+			<form onSubmit={registerAction}>
+				<input type="text" placeholder="EMail" name="email" value={register.email} onChange={doChange} />
+				<input type="text" placeholder="Username" name="username" value={register.username} onChange={doChange} />
+				<input type="password" placeholder="Password" name="password" value={register.password} onChange={doChange} />
+				<button>login</button>
+			</form>
+		</>
+	)
 }

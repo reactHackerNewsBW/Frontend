@@ -36,29 +36,29 @@ export default function Login(props) {
 				// props.history.push("list");
 			})
 			.catch(err => clg(`>>> PROBLEM -- Login > axios :: ${err}`))
-}
+	}
 
-useEffect(() => {
-	sessionStorage.getItem("token") ? setIsLogged(true) : setIsLogged(false);
-	/* 
-	CHECK
-	if logged in, bypass LOGIN page, directly to list
+	useEffect(() => {
+		sessionStorage.getItem("token") ? setIsLogged(true) : setIsLogged(false);
+		/* 
+		CHECK
+		if logged in, bypass LOGIN page, directly to list
+	
+		<Redirect /> from react in the return()
+		 */
+	}, [])
 
-	<Redirect /> from react in the return()
-	 */
-}, [])
-
-return (
-	/*
-	WATCH FOR CHANGE
-	*/
-	<>
-		<form onSubmit={loginAction}>
-			<input type="text" placeholder="EMail" name="email" value={cred.email} onChange={doChange} />
-			<input type="text" placeholder="Username" name="username" value={cred.username} onChange={doChange} />
-			<input type="password" placeholder="Password" name="password" value={cred.password} onChange={doChange} />
-			<button>login</button>
-		</form>
-	</>
-)
+	return (
+		/*
+		WATCH FOR CHANGE
+		*/
+		<>
+			<form onSubmit={loginAction}>
+				<input type="text" placeholder="EMail" name="email" value={cred.email} onChange={doChange} />
+				<input type="text" placeholder="Username" name="username" value={cred.username} onChange={doChange} />
+				<input type="password" placeholder="Password" name="password" value={cred.password} onChange={doChange} />
+				<button>login</button>
+			</form>
+		</>
+	)
 }
