@@ -8,7 +8,7 @@ function clg(...x) {
 const URL = "http://localhost:5000/api"
 
 export default function Login(props) {
-	const [cred, setCred] = useState({ username: "", password: "" });
+	const [cred, setCred] = useState({ username: "", password: "", email: "" });
 	const [isLogged, setIsLogged] = useState(false);
 
 	// control form fields
@@ -54,8 +54,9 @@ return (
 	*/
 	<>
 		<form onSubmit={loginAction}>
-			<input type="text" name="username" value={cred.username} onChange={doChange} />
-			<input type="password" name="password" value={cred.password} onChange={doChange} />
+			<input type="text" placeholder="EMail" name="email" value={cred.email} onChange={doChange} />
+			<input type="text" placeholder="Username" name="username" value={cred.username} onChange={doChange} />
+			<input type="password" placeholder="Password" name="password" value={cred.password} onChange={doChange} />
 			<button>login</button>
 		</form>
 	</>
