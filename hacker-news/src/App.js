@@ -1,11 +1,17 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import {Register} from "./Register";
+// import styled from "styled-components";
+
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      
+<Register/>
     </div>
   );
 }
