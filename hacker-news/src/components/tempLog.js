@@ -40,6 +40,12 @@ export default function Login(props) {
 
 useEffect(() => {
 	sessionStorage.getItem("token") ? setIsLogged(true) : setIsLogged(false);
+	/* 
+	CHECK
+	if logged in, bypass LOGIN page, directly to list
+
+	<Redirect /> from react in the return()
+	 */
 }, [])
 
 return (

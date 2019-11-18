@@ -8,20 +8,25 @@ import {
 // import Login from "./components/Login"
 
 import Login from "./components/tempLog";
+import Register from "./components/tempReg";
 import './App.css';
 
 function App() {
 	return (
 		
-		<p><Login /></p>
-		// <Router>
-		// 	<div className="App">
-		// 		<header className="App-header">
-		// 			<p><Link to="/login">LOGIN</Link></p>
-		// 		</header>
-		// 	</div>
-		// 	<Route path="/login" component={Login} />
-		// </Router>
+		<Router>
+			<div className="App">
+				<header className="App-header">
+					<p><Link to="/login">Login to existing</Link></p>
+					<p><Link to="/register">Register new</Link></p>
+				</header>
+			</div>
+			<Switch>
+			<Route path="/login" component={Login} />
+			<Route path="/register" component={Register} />
+			<Route render ={() => {return 404}} />
+			</Switch>
+		</Router>
 	);
 }
 
