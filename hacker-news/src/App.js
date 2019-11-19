@@ -6,8 +6,8 @@ import Login from "./components/Login";
 export default function App() {
   return (
     <div className="App">
-      
-<Register/>
+      <Login />
+      <Register />
     </div>
   );
 }

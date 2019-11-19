@@ -1,10 +1,9 @@
 import React from "react";
 import { Form, Icon, Input, Button, Checkbox, Card } from "antd";
-
 import "antd/dist/antd.css";
 
 export default function Login() {
-  const submit = () => {};
+  const submit = () => {console.log("Sumission Test")};
 
   return (
     <Card className="Form">
