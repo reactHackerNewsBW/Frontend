@@ -3,7 +3,7 @@ import { Form, Icon, Input, Button } from "antd";
 import "antd/dist/antd.css";
 import styled from "styled-components";
 
-export const Register = () => {
+export default function Register() {
   const Container = styled.div`
     display: flex;
     flex-direction: column;
