@@ -23,7 +23,10 @@ const ListItem = props => {
               textAlign: "center"
             }}
           >
-            <Badge variant="secondary"> New</Badge>
+            <Badge variant="secondary" style={{ background: "black" }}>
+              {" "}
+              New
+            </Badge>
             &nbsp;&nbsp; &nbsp;&nbsp; {title}
           </ListGroup.Item>
         </ListGroup>
