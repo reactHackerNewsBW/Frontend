@@ -51,6 +51,8 @@ export const Register = () => {
 
   return (
     <div className="Container">
+      <p style={{ fontWeight: "bold" }}>Register</p>
+      <br />
       <Form onSubmit={registerAction}>
         <Form.Group controlId="formBasicUsername">
           <Form.Label>Username</Form.Label>
