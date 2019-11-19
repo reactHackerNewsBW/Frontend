@@ -6,7 +6,7 @@ import {
 	Switch
 } from "react-router-dom";
 import { Register } from "./components/Register";
-import Login from "./components/tempLog";
+import Login from "./components/Login";
 import List from "./components/List";
 import "./App.css";
 

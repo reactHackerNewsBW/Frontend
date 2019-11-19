@@ -1,4 +1,5 @@
 import React from "react"
+import antd from "antd";
 
 function clg(...x) {
 	for (let exes of x) console.log(exes);

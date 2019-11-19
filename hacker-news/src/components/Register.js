@@ -9,13 +9,12 @@ function clg(...exes) {
 	for (let x of exes) console.log(x);
 }
 
-const URL = "http://localhost:5000/api"
+const URL = "https://bw-backend-hn.herokuapp.com/api/auth/register"
 
 export const Register = () => {
 	const [register, setRegister] = useState({ username: "", password: "", email:"" });
 	const [isRegged, setIsRegged] = useState(false);
 
-	//#region styled
 	const Container = styled.div`
 		display: flex;
 		flex-direction: column;
@@ -31,12 +30,11 @@ export const Register = () => {
 		align-items: center;
 		justify-content: center;
 	`;
-	//#endregion styled
 
 	// control form fields
 	const doChange = e => {
-		clg(e.target.name, e.target.value) 
 		setRegister({ ...register, [e.target.name]: e.target.value });
+		clg(register) 
 	}
 
 	// form submit
@@ -48,13 +46,14 @@ export const Register = () => {
 			/*	
 			WATCH FOR CHANGE
 			*/
-			.post(`${URL}/register`, register)
+			.post(URL, register)
 			.then(res => {
 
 				/*
 				WATCH FOR CHANGE
 				*/
 				sessionStorage.setItem("token", res.data.payload);
+				clg(res)
 
 				setIsRegged(true)
 				clg("--- Registered ++")
@@ -65,8 +64,8 @@ export const Register = () => {
 
 
 	return (
-		<Container>
-			<DivForForm>
+		// <Container>
+		// <DivForForm>
 				<Form onSubmit={registerAction} style={{ width: "400px" }} >
 					<Form.Item>
 						<Input
@@ -97,8 +96,8 @@ export const Register = () => {
 						>Register</Button>
 					</Form.Item>
 				</Form>
-			</DivForForm>
-		</Container>
+		// </DivForForm>
+		// </Container>
 	);
 
 };
