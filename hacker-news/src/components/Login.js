@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-import { InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
+import { Card, Form, Label, Input, FormGroup } from 'reactstrap';
 
 export default function Login() {
 
@@ -9,31 +9,44 @@ export default function Login() {
     password: "",
   });
 
-  const doChange = e => {
-    clg(e.target.name, e.target.value);
-    setRegister({ ...register, [e.target.name]: e.target.value });
-  };
-
-  // form submit
-  const registerAction = e => {
-    e.preventDefault();
-
-  };
   return (
-    <div>
-      <InputGroup>
-        <Input placeholder="username" />
-        <InputGroupAddon addonType="append">
-          <InputGroupText>@hackerclone.news</InputGroupText>
-        </InputGroupAddon>
-      </InputGroup>
+    <Card>
+      <Form>
 
-      <InputGroup>
-        <Input type="password" placeholder="password" />
-        <InputGroupAddon addonType="prepend">
-          <InputGroupText>@hackerclone.news</InputGroupText>
-        </InputGroupAddon>
-      </InputGroup>
-    </div>
-  );
+        <FormGroup>
+          <Label for="exampleEmail">Email</Label>
+          <Input type="email" name="email" id="login_email" placeholder="what's your email? 💁🏿‍" />
+        </FormGroup>
+
+        <FormGroup>
+          <Label for="examplePassword">Password</Label>
+          <Input type="password" name="password" id="login_password" placeholder="what's your password? 🔑" />
+        </FormGroup>
+
+        <FormGroup tag="fieldset">
+          <legend>Remember this device?</legend>
+
+          <FormGroup check>
+            <Label check>
+              <Input type="radio" name="login_remember" />{' '}
+              Yes
+          </Label>
+
+            <Label check>
+              <Input type="radio" name="login_remember" />{' '}
+              Yes
+          </Label>
+          </FormGroup>
+        </FormGroup>
+
+        <FormGroup>
+          <Button>Sign In</Button>
+
+        </FormGroup>
+
+
+
+      </Form>
+    </Card>
+  )
 };
