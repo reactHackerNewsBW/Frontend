@@ -21,7 +21,6 @@ const ListItem = props => {
             variant="success"
             style={{
               textAlign: "center",
-              textDecoration: "underline"
             }}
           >
             <Badge variant="secondary"> New</Badge>
