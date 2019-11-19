@@ -59,3 +59,4 @@ export const reducer = (state = initialUser, action) => {
 			return state;
 	}
 }
+

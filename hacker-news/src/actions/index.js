@@ -10,7 +10,7 @@ const URL = "https://bw-backend-hn.herokuapp.com/api/auth"
 
 const axiosWithAuthent = () => {
 	const token = sessionStorage.getItem("token")
-	
+
 	return axios.create({
 		headers: {
 			Authorization: token
@@ -38,9 +38,10 @@ export const register = user =>
 				dispatch({ type: REG_SUCCESS, payload: res.data })
 				return (true)
 			})
-			.catch(err =>
+			.catch(err => {
 				clg(`!!! PROBLEM ACTION Register (fail) ${err}`)
-				dispatch({type: REG_FAILED, payload: err})
+				dispatch({ type: REG_FAILED, payload: err })
+			}
 			)
 	}
 //#endregion register
@@ -52,17 +53,18 @@ export const LOGIN_FAILED = "LOGIN_FAILED";
 
 export const login = (user, pass) =>
 	dispatch => {
-		dispatch({type: LOGIN_START});
+		dispatch({ type: LOGIN_START });
 		return axiosWithAuthent()
-			.post(`${URL}/login`, {username: user, password: pass})
+			.post(`${URL}/login`, { username: user, password: pass })
 			.then(res => {
 				clg(">>> ACTION Register (success)", res);
-				dispatch({type: LOGIN_SUCCESS, payload: res.data})
-				return(true);
+				dispatch({ type: LOGIN_SUCCESS, payload: res.data })
+				return (true);
 			})
-			.catch(err =>
+			.catch(err => {
 				clg(`!!! PROBLEM ACTION Login (fail) ${err}`)
-				dispatch({type: LOGIN_FAILED, payload: err})
+				dispatch({ type: LOGIN_FAILED, payload: err })
+			}
 			)
 	}
 

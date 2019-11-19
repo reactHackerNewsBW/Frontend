@@ -2,10 +2,10 @@ import React from "react";
 import {
 	BrowserRouter as Router,
 	Route,
-	Link,
-	Switch
+	Link
 } from "react-router-dom";
-import { Register } from "./components/Register";
+
+import Register from "./components/Register";
 import Login from "./components/Login";
 import List from "./components/List";
 import "./App.css";
