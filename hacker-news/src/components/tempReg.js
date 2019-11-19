@@ -37,7 +37,7 @@ export default function Register(props) {
 				clg("--- Registered ++")
 				// props.history.push("list");
 			})
-			.catch(err => clg(`>>> PROBLEM -- Register > axios :: ${err}`))
+			.catch(err => console.error(`>>> PROBLEM -- Register > axios :: ${err}`))
 	}
 
 	useEffect(() => {
@@ -59,7 +59,7 @@ export default function Register(props) {
 				<input type="text" placeholder="EMail" name="email" value={register.email} onChange={doChange} />
 				<input type="text" placeholder="Username" name="username" value={register.username} onChange={doChange} />
 				<input type="password" placeholder="Password" name="password" value={register.password} onChange={doChange} />
-				<button>login</button>
+				<button>Register</button>
 			</form>
 		</>
 	)

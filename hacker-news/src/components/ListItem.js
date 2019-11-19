@@ -4,10 +4,16 @@ function clg(...x) {
 	for (let exes of x) console.log(exes);
 }
 
-export default function ListItem(item) {
-	// const details = item.details;
+const ListItem = props => {
+	const {id, title, url} = props.single;
+
+	clg(title);
 
 	return (
-		<div>Item Details</div>
+		<div>
+			<p id={id} url={url}>{title}</p> 
+		</div>
 	)
 }
+
+export default ListItem
