@@ -6,7 +6,7 @@ export default function Login() {
   const submit = () => {console.log("Sumission Test")};
 
   return (
-    <Card className="Form">
+    <Card className="Login Form">
       <Form onSubmit={submit} className="login-form">
         <Form.Item>
           <Input

@@ -27,3 +27,10 @@
 .App-link {
   color: #09d3ac;
 }
+
+.Login {
+  display: flex;
+  align-items: center;
+  width: 45%;
+  height: 300px;
+}
