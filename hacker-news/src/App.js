@@ -10,7 +10,7 @@ import Login from "./components/tempLog";
 import List from "./components/List";
 import "./App.css";
 
-function App() {
+export default function App() {
 	return (
 		<div className="App">
 			<Router>
@@ -28,6 +28,4 @@ function App() {
 		</div>
 	);
 }
-
-export default App;
 
