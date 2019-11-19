@@ -4,6 +4,7 @@ import { Form, Icon, Input, Button } from "antd";
 import "antd/dist/antd.css";
 import styled from "styled-components";
 
+
 function clg(...exes) {
 	for (let x of exes) console.log(x);
 }
@@ -99,4 +100,5 @@ export const Register = () => {
 			</DivForForm>
 		</Container>
 	);
+
 };
