@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { connect } from "react-redux";
+import { login } from "../actions"
+
 import { Form, Icon, Input, Button, Checkbox, Card } from "antd";
 import "antd/dist/antd.css";
 
@@ -10,48 +13,35 @@ function clg(...x) {
 const URL = "https://bw-backend-hn.herokuapp.com/api/auth/login"
 
 export const Login = (props) => {
-	const [cred, setCred] = useState({ username: "", password: ""});
-	const [isLogged, setIsLogged] = useState(false);
+	const [logFields, setLogFields] = useState({ username: "", password: ""});
+	
+	// const [isLogged, setIsLogged] = useState(false);
 
 	// control form fields
 	const doChange = e => {
-		setCred({ ...cred, [e.target.name]: e.target.value });
-		clg(cred);
+		setLogFields({ ...logFields, [e.target.name]: e.target.value });
+		clg(logFields);
 	}
 
 	// form submit
-	const loginAction = e => {
+	const loginAction = incoming => {
 		// e.preventDefault();
 		// axios call to get login creds from backend
 		axios
-			.post(URL, cred)
-			.then(clg("loginAction >"))
+			.post(URL, logFields)
+			// .then(clg("loginAction >"))
 			.then(res => {
 				clg(res.data)
 				sessionStorage.setItem("token", res.data.payload);
-				setIsLogged(true)
 				clg(">>> Logged")
-
+				
 				/*
 				WATCH FOR CHANGE
 				*/
-				// props.history.push("list");
+				props.history.push("/list");
 			})
-			.catch(err => clg(`!!! PROBLEM -- Login > axios :: ${err}`))
+			.catch(err => clg(`!!! PROBLEM Login > axios :: ${err}`))
 	}
-
-	useEffect(() => {
-		if (isLogged) {
-			/* 
-			CHECK
-			if logged in, bypass LOGIN page, directly to list
-		
-			<Redirect /> from react in the return()
-			*/
-		} else {
-			sessionStorage.getItem("token") ? setIsLogged(true) : setIsLogged(false);
-		}
-	}, [])
 
 	return (
 		<Card className="Login">
@@ -60,7 +50,7 @@ export const Login = (props) => {
 					<Input
 						prefix={<Icon type="user" style={{}} />}
 						placeholder="Username"
-						name="username" value={cred.username} onChange={doChange}
+						name="username" value={logFields.username} onChange={doChange}
 					/>
 				</Form.Item>
 				<Form.Item>
@@ -68,7 +58,7 @@ export const Login = (props) => {
 						type="password"
 						prefix={<Icon type="key" style={{}} />}
 						placeholder="Password"
-						name="password" value={cred.password} onChange={doChange}
+						name="password" value={logFields.password} onChange={doChange}
 					/>
 				</Form.Item>
 
@@ -82,4 +72,12 @@ export const Login = (props) => {
 	);
 }
 
-export default Login;
+const mapStateToProps = state => ({
+	error: state.error,
+	login: state.login,
+	inProgress: state.inProgress
+})
+
+const mapDispatchToProps = {login};
+
+export default connect (mapStateToProps, mapDispatchToProps)(Login);

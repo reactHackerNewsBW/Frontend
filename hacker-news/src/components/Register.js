@@ -15,8 +15,7 @@ function clg(...exes) {
 const URL = "https://bw-backend-hn.herokuapp.com/api/auth/register"
 
 const Register = (props) => {
-	const [field, setField] = useState({ username: "", password: "", email: "" });
-	// const [isRegged, setIsRegged] = useState(false);
+	const [regFields, setRegFields] = useState({ username: "", password: "", email: "" });
 
 	const {register} = props;
 
@@ -38,14 +37,15 @@ const Register = (props) => {
 
 	// control form fields
 	const doChange = e => {
-		setField({ ...field, [e.target.name]: e.target.value });
-		clg(field)
+		setRegFields({ ...regFields, [e.target.name]: e.target.value });
+		clg(regFields);
 	}
 
 	// form submit
 	const registerAction = incoming => {
 		// e.preventDefault();
 		// axios call to get register from backend
+		clg("regfields",regFields)
 		axios
 
 			/*	
@@ -55,16 +55,13 @@ const Register = (props) => {
 			.then(res => {
 				clg("--- Registered ++")
 				clg(res)
-				props.history.push("/login");
-
+				
 				/*
 				WATCH FOR CHANGE
 				*/
-				// sessionStorage.setItem("token", res.data.payload);
-
-				// setIsRegged(true)
+				props.history.push("/login");
 			})
-			.catch(err => clg(`>>> PROBLEM -- Register > axios :: ${err}`))
+			.catch(err => clg(`>>> PROBLEM Register > axios :: ${err}`))
 	}
 
 
