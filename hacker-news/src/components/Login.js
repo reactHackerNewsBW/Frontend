@@ -3,8 +3,8 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { login } from "../actions"
 
-import { Form, Icon, Input, Button, Checkbox, Card } from "antd";
-import "antd/dist/antd.css";
+// import { Form, Icon, Input, Button, Checkbox, Card } from "antd";
+// import "antd/dist/antd.css";
 
 function clg(...x) {
 	for (let exes of x) console.log(exes);

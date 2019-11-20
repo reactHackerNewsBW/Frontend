@@ -18,7 +18,7 @@ export default function List(props) {
 			axios
 				.get(`${URL}/stories`)
 				.then(res => {
-					clg(res.data)
+					// clg(res.data)
 					setItemsAll(res.data)
 				})
 				.catch(err => {
