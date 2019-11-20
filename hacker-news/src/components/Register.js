@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { connect } from "react-redux";
 import { register } from "../actions"
 
-import { Form, Icon, Input, Button } from "antd";
-import "antd/dist/antd.css";
 import styled from "styled-components";
 
 
 function clg(...exes) {
-	for (let x of exes) console.log(x);
+  for (let x of exes) console.log(x);
 }
 
 const URL = "https://bw-backend-hn.herokuapp.com/api/auth/register"
@@ -48,59 +49,76 @@ const Register = (props) => {
 		clg("regfields",regFields)
 		axios
 
-			/*	
+      /*	
 			WATCH FOR CHANGE
 			*/
-			.post(URL, {username: incoming.username, password: incoming.password})
-			.then(res => {
-				clg("--- Registered ++")
-				clg(res)
-				
-				/*
-				WATCH FOR CHANGE
-				*/
-				props.history.push("/login");
-			})
-			.catch(err => clg(`>>> PROBLEM Register > axios :: ${err}`))
-	}
+.post(URL, {username: incoming.username, password: incoming.password})
+.then(res => {
+	clg("--- Registered ++")
+	clg(res)
+	
+	/*
+	WATCH FOR CHANGE
+	*/
+	props.history.push("/login");
+})
+.catch(err => clg(`>>> PROBLEM Register > axios :: ${err}`))
+}
 
+  return (
+    <div className="Container">
+      <p style={{ fontWeight: "bold" }}>Register</p>
+      <br />
+      <Form onSubmit={registerAction}>
+        <Form.Group controlId="formBasicUsername">
+          <Form.Label>Username</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Enter username"
+            name="username"
+            value={register.username}
+            onChange={doChange}
+          />
+        </Form.Group>
 
-	return (
-		// <Container>
-		// <DivForForm>
-		<Form onSubmit={registerAction} style={{ width: "400px" }} >
-			<Form.Item>
-				<Input
-					name="username" value={register.username} onChange={doChange}
-					prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
-					placeholder="Username" type="text"
-				/>
-			</Form.Item>
-			<Form.Item>
-				<Input
-					name="email" value={register.email} onChange={doChange}
-					prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
-					placeholder="Email" type="email"
-				/>
-			</Form.Item>
-			<Form.Item>
-				<Input
-					name="password" value={register.password} onChange={doChange}
-					prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
-					placeholder="Password" type="password"
-				/>
-			</Form.Item>
-			<Form.Item>
-				<Button
-					type="primary"
-					htmlType="submit"
-					style={{ color: "white", background: "#0dbd10" }}
-				>Register</Button>
-			</Form.Item>
-		</Form>
-		// </DivForForm>
-		// </Container>
-	);
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Enter email"
+            name="email"
+            value={register.email}
+            onChange={doChange}
+          />
+          <Form.Text
+            className="text-muted"
+            style={{
+              color: "black",
+              background: "white",
+              textDecoration: "underline"
+            }}
+          >
+            We'll never share your email with anyone else.
+          </Form.Text>
+        </Form.Group>
+
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Password"
+            name="password"
+            value={register.password}
+            onChange={doChange}
+          />
+        </Form.Group>
+
+        <Button variant="info" type="submit">
+          Submit
+        </Button>
+      </Form>
+    </div>
+  );
 };
 
 const mapStateToProps = state => ({
