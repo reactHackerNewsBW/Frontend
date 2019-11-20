@@ -12,16 +12,18 @@ const ListItem = props => {
 
   return (
     <div>
-      <a href={url}>
+      <a href={url} className="list-links">
         <ListGroup id={id}>
           <ListGroup.Item
             action
             variant="success"
             style={{
-              textAlign: "center",
+              textAlign: "center"
             }}
           >
-            <Badge variant="secondary"> New</Badge>
+            <Badge variant="secondary" style={{ background: "black" }}>
+              New
+            </Badge>
             &nbsp;&nbsp; &nbsp;&nbsp; {title}
           </ListGroup.Item>
         </ListGroup>

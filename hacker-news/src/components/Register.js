@@ -8,6 +8,7 @@ import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
+import MatrixParallax from "react-matrix-parallax";
 
 function clg(...exes) {
   for (let x of exes) console.log(x);
@@ -56,7 +57,17 @@ export default function Register() {
 
   return (
     <div className="Container">
-      <Form onSubmit={registerAction}>
+      <p style={{ fontWeight: "bold" }}>Register</p>
+      <br />
+      <Form
+        onSubmit={registerAction}
+        style={{
+          border: "5px solid green",
+          padding: "40px",
+          borderRadius: "25px",
+          boxShadow: "5px 8px black"
+        }}
+      >
         <Form.Group controlId="formBasicUsername">
           <Form.Label>Username</Form.Label>
           <Form.Control
