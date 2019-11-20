@@ -1,8 +1,6 @@
 
 <h1 align="center">Hacker News Clone 👩🏿‍💻</h1>
-<img src="https://img.shields.io/badge/Built%20with-React%20%E2%9A%9B-purple?style=flat&logo=appveyor">
-
-> check us out at ```hacker_news```
+<img align="right" src="https://img.shields.io/badge/Built%20with-React%20%E2%9A%9B-purple?style=flat&logo=appveyor">
 
 ## Usage  🔬
 
@@ -21,22 +19,21 @@
 │   │       └───fa
 │   └───_less
 │      
-└───src
+|───src
 │           
 └───package.json 
 │           
 └───README.md
 ```
 
-## Changelog
-
 
 ## Minimum Viable Project 
 
 
 ## Authors
-## The Enigmatic ```(Jffry (Dsr))``` | UI/UX Developer 
-<img height="100px" width="100px" src="assets/imgs/team/Jeffrey.png"/>
+### ```(jffry (dsr))``` | React ⚛ UI/UX Developer 
+
+### ```abderahim``` | React ⚛ UI/UX Developer
 
 ## Attributions 🙏🏿
 

@@ -1,6 +1,11 @@
+/* Author: jffrydsr 
+   Date: 11/22/2019
+   Copyright: Hacker News Clone ©, 2019
+*/
+
 import React from "react";
 import { useState, useEffect } from 'react';
-import { Card, Form, Label, Input, FormGroup } from 'reactstrap';
+import { Card, Form, Label, Input, FormGroup } from 'react-bootstrap';
 
 export default function Login() {
 
@@ -8,6 +13,12 @@ export default function Login() {
     username: "",
     password: "",
   });
+
+  const submitForm = (event) => {
+    do {
+      event.preventDefault();
+    }
+  };
 
   return (
     <Card>
