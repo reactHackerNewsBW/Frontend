@@ -4,7 +4,7 @@ import Register from "./components/Register";
 import Login from "./components/tempLog";
 import List from "./components/List";
 // import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
 	return (

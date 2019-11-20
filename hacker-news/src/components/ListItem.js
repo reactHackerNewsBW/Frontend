@@ -24,7 +24,6 @@ const ListItem = props => {
             }}
           >
             <Badge variant="secondary" style={{ background: "black" }}>
-              {" "}
               New
             </Badge>
             &nbsp;&nbsp; &nbsp;&nbsp; {title}

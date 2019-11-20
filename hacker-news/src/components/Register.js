@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import { connect } from "react-redux";
 import { register } from "../actions"
 
@@ -69,7 +69,15 @@ const Register = (props) => {
     <div className="Container">
       <p style={{ fontWeight: "bold" }}>Register</p>
       <br />
-      <Form onSubmit={registerAction}>
+      <Form
+        onSubmit={registerAction}
+        style={{
+          border: "5px solid green",
+          padding: "40px",
+          borderRadius: "25px",
+          boxShadow: "5px 8px black"
+        }}
+      >
         <Form.Group controlId="formBasicUsername">
           <Form.Label>Username</Form.Label>
           <Form.Control
