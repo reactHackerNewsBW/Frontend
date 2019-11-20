@@ -2,7 +2,6 @@
   --clr-vine: #000000;
 
   --clr-bg-main: var(--clr-vine);
-
 }
 
 .App {
@@ -33,4 +32,8 @@
   align-items: center;
   width: 45%;
   height: 300px;
+}
+
+.MatrixParallax-fullWindow-keni91 {
+  z-index: -1;
 }

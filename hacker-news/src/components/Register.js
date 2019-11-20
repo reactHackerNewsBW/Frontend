@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import "bootstrap/dist/css/bootstrap.min.css";
+import MatrixParallax from "react-matrix-parallax";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import { connect } from "react-redux";
 import { register } from "../actions"
 
 import styled from "styled-components";
+
 
 
 function clg(...exes) {
