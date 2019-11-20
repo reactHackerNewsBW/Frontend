@@ -5,11 +5,12 @@ import {
 	Link,
 	Switch
 } from "react-router-dom";
-import { Register } from "./components/Register";
+import Register from "./components/Register";
 import Login from "./components/tempLog";
 import List from "./components/List";
 // import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 
 export default function App() {
