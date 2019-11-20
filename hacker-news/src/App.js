@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import { Register } from "./components/Register";
+import Register from "./components/Register";
 import Login from "./components/tempLog";
 import List from "./components/List";
 import "./App.css";
@@ -45,6 +45,7 @@ function App() {
       <Test />
     </>
   );
+
 }
 
 export default App;
