@@ -4,7 +4,6 @@ import Register from "./components/Register";
 import Login from "./components/tempLog";
 import List from "./components/List";
 import AddEdit from "./components/AddEdit"
-
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -41,11 +40,24 @@ function App(props) {
 						<AddEdit {...props}/>
 					)}
 				/>
-				{/* <Route render={() => { return 404 }} /> */}
-			</Router>
-			{/* <Register /> */}
-		</div>
-	);
+          <Route path="/test" component={Test} />
+
+          {/* <Route render={() => { return 404 }} /> */}
+        </Router>
+        {/* <Register /> */}
+        <React.Fragment>
+          <MatrixParallax
+            color="rgba(122, 229, 114, 0.87)"
+            backgroundColor="rgba(0,0,0,1)"
+          >
+            <h2>HACKER NEWS</h2>
+            <h5 style={{ maxWidth: "100vw" }}></h5>
+          </MatrixParallax>
+        </React.Fragment>
+      </div>
+      <Test />
+    </>
+  );
 }
 
 export default App;
