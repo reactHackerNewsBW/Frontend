@@ -46,7 +46,8 @@ export default function AddEdit(props) {
 	}
 
 	// form submit
-	const editAction = incoming => {
+	const editAction = e => {
+		e.preventDefault();
 		axios
 			.post(URL, { title: editFields.title, url: editFields.url })
 			.then(res => {
