@@ -37,3 +37,9 @@
 .MatrixParallax-fullWindow-keni91 {
   z-index: -1;
 }
+
+.space-plus {
+	margin: 0 0 0 15px;
+	padding: 0 3px;
+	border: 1px solid #888;
+}

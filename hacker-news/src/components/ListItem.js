@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import { Link } from "react-router-dom"
+import axios from "axios";
+
 
 import List from "./List";
 import Badge from "react-bootstrap/Badge";
@@ -11,6 +13,24 @@ function clg(...x) {
 
 const ListItem = props => {
 	const { id, title, url } = props.single;
+
+	const delMeNow = id => {
+		// https://bw-backend-hn.herokuapp.com/api/deletestories/:id
+		// e.preventDefault();
+		if (id < 21) {
+			console.error(">>>");
+			console.error(">>> WILL NOT PROCEED. Post ID < 21");
+			console.error(">>>");
+			return;
+		}
+		axios
+			.delete(`https://bw-backend-hn.herokuapp.com/api/deletestories/${id}`)
+			.then(res => {
+				clg(res)
+				// props.history.push("/list");
+			})
+			.catch(err => clg(`>>> PROBLEM AddEdit > axios :: ${err}`))
+	}
 
 	return (
 		<div>
@@ -27,8 +47,8 @@ const ListItem = props => {
 							New
             </Badge>
 						&nbsp;&nbsp; &nbsp;&nbsp; {title}
-						<Link to={`/edit/${id}`}>edit</Link>
-						
+						<Link className="space-plus" to={`/edit/${id}`}>edit</Link>
+						{/* <Link className="space-plus" onClick={delMeNow(id)}>DELETE</Link>						 */}
 					</ListGroup.Item>
 				</ListGroup>
 			</a>

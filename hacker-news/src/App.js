@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Register from "./components/Register";
-import Login from "./components/tempLog";
+import Login from "./components/Login";
 import List from "./components/List";
 import AddEdit from "./components/AddEdit"
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Test } from "./components/test";
-import MatrixParallax from "react-matrix-parallax";
+// import MatrixParallax from "react-matrix-parallax";
 
 
 function clg(...x) {
@@ -22,7 +22,13 @@ function App(props) {
 				<Router>
 					<div className="App">
 						<p>
+							{/* LINK TO KJs BUILD BELOW */}
+							{/* LINK TO KJs BUILD BELOW */}
+							<a href="">Home</a>
+						</p>
+						<p>
 							<Link to="/login">Login to existing</Link>
+							<Link className="space-plus" to="/" onClick={() => sessionStorage.clear()} >LOGOUT</Link>
 						</p>
 						<p>
 							<Link to="/register">Register new</Link>
@@ -48,7 +54,7 @@ function App(props) {
 					{/* <Route render={() => { return 404 }} /> */}
 				</Router>
 				{/* <Register /> */}
-				<React.Fragment>
+				{/* <React.Fragment>
 					<MatrixParallax
 						color="rgba(122, 229, 114, 0.87)"
 						backgroundColor="rgba(0,0,0,1)"
@@ -56,7 +62,7 @@ function App(props) {
 						<h2>HACKER NEWS</h2>
 						<h5 style={{ maxWidth: "100vw" }}></h5>
 					</MatrixParallax>
-				</React.Fragment>
+				</React.Fragment> */}
 			</div>
 			<Test />
 		</>

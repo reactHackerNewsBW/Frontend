@@ -1,7 +1,13 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { connect } from "react-redux";
 import { login } from "../actions"
+
+import React, { useState } from "react";
+import axios from "axios";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import "bootstrap/dist/css/bootstrap.min.css";
+// import MatrixParallax from "react-matrix-parallax";
+import styled from "styled-components";
 
 // import { Form, Icon, Input, Button, Checkbox, Card } from "antd";
 // import "antd/dist/antd.css";
@@ -24,8 +30,8 @@ export const Login = (props) => {
 	}
 
 	// form submit
-	const loginAction = incoming => {
-		// e.preventDefault();
+	const loginAction = e => {
+		e.preventDefault();
 		// axios call to get login creds from backend
 		axios
 			.post(URL, logFields)
@@ -44,31 +50,31 @@ export const Login = (props) => {
 	}
 
 	return (
-		<Card className="Login">
+		<div className="Login">
 			<Form className="login-form">
-				<Form.Item>
-					<Input
-						prefix={<Icon type="user" style={{}} />}
+				{/* <Form.Item> */}
+					<input
+						// prefix={<Icon type="user" style={{}} />}
 						placeholder="Username"
 						name="username" value={logFields.username} onChange={doChange}
 					/>
-				</Form.Item>
-				<Form.Item>
-					<Input
+				{/* </Form.Item> */}
+				{/* <Form.Item> */}
+					<input
 						type="password"
-						prefix={<Icon type="key" style={{}} />}
+						// prefix={<Icon type="key" style={{}} />}
 						placeholder="Password"
 						name="password" value={logFields.password} onChange={doChange}
 					/>
-				</Form.Item>
+				{/* </Form.Item> */}
 
-				<Form.Item>
+				{/* <Form.Item> */}
 					<Button onClick={loginAction} type="primary" size="large">
 						Login!
           			</Button>
-				</Form.Item>
+				{/* </Form.Item> */}
 			</Form>
-		</Card>
+		</div>
 	);
 }
 
