@@ -52,9 +52,9 @@ export const Register = () => {
 
   return (
     <div className="Container">
-      <p style={{ fontWeight: "bold", color: "white", fontSize: "20px" }}>
+      {/* <p style={{ fontWeight: "bold", color: "white", fontSize: "20px" }}>
         Register
-      </p>
+      </p> */}
       <br />
       <Form
         onSubmit={registerAction}
