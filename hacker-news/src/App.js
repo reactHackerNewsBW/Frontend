@@ -25,7 +25,7 @@ function App(props) {
 						<p>
 							{/* LINK TO KJs BUILD BELOW */}
 							{/* LINK TO KJs BUILD BELOW */}
-							<a href="">Home</a>
+							<a href="https://hackernews-for2019.netlify.com/index.html">Home</a>
 						</p>
 						<p>
 							<Link to="/login">Login to existing</Link>
