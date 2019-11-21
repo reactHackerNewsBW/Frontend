@@ -1,5 +1,6 @@
 import React from "react";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {
 	BrowserRouter as Router,
 	Route,
@@ -33,6 +34,16 @@ export default function App() {
 =======
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Register from "./components/Register";
+=======
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  NavLink
+} from "react-router-dom";
+import { Register } from "./components/Register";
+>>>>>>> cf0dc7a52bbc617437111ffb5ddc1c43f2453025
 import Login from "./components/tempLog";
 import List from "./components/List";
 import AddEdit from "./components/AddEdit"
@@ -41,6 +52,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Test } from "./components/test";
 import MatrixParallax from "react-matrix-parallax";
 
+<<<<<<< HEAD
 
 function clg(...x) {
 	for (let exes of x) console.log(exes);
@@ -94,5 +106,44 @@ function App(props) {
 		</>
 >>>>>>> 01dfa7c21017a694b16b8c8f47853e4e81b64e20
 	);
+=======
+function App() {
+  return (
+    <>
+      <div className="App">
+        <Router>
+          <div className="App-links">
+            <p>
+              <NavLink to="/login">Login </NavLink>
+            </p>
+            <p>
+              <NavLink to="/register">Register </NavLink>
+            </p>
+            <p>
+              <NavLink to="/list">List</NavLink>
+            </p>
+          </div>
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/list" component={List} />
+          <Route path="/test" component={Test} />
+
+          {/* <Route render={() => { return 404 }} /> */}
+        </Router>
+        {/* <Register /> */}
+        <React.Fragment>
+          <MatrixParallax
+            color="rgba(122, 229, 114, 0.87)"
+            backgroundColor="rgba(0,0,0,1)"
+          >
+            <h2 className="title">HACKER NEWS</h2>
+            <h5 style={{ maxWidth: "100vw" }}></h5>
+          </MatrixParallax>
+        </React.Fragment>
+      </div>
+      <Test />
+    </>
+  );
+>>>>>>> cf0dc7a52bbc617437111ffb5ddc1c43f2453025
 }
 

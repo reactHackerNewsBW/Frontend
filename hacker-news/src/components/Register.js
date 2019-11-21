@@ -154,6 +154,7 @@ const Register = (props) => {
         			</Form.Text>
 				</Form.Group>
 
+<<<<<<< HEAD
 				<Form.Group controlId="formBasicPassword">
 					<Form.Label>Password</Form.Label>
 					<Form.Control
@@ -167,6 +168,68 @@ const Register = (props) => {
 
 				<Button variant="info" type="submit">
 					Submit
+=======
+  return (
+    <div className="Container">
+      {/* <p style={{ fontWeight: "bold", color: "white", fontSize: "20px" }}>
+        Register
+      </p> */}
+      <br />
+      <Form
+        onSubmit={registerAction}
+        style={{
+          border: "5px solid green",
+          padding: "40px",
+          borderRadius: "25px",
+          boxShadow: "5px 8px black"
+        }}
+      >
+        <Form.Group controlId="formBasicUsername">
+          <Form.Label className="formfont">Username</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Enter username"
+            name="username"
+            value={register.username}
+            onChange={doChange}
+          />
+        </Form.Group>
+
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label className="formfont">Email address</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Enter email"
+            name="email"
+            value={register.email}
+            onChange={doChange}
+          />
+          <Form.Text
+            className="text-muted"
+            style={{
+              color: "black",
+              background: "white",
+              textDecoration: "underline"
+            }}
+          >
+            We'll never share your email with anyone else.
+          </Form.Text>
+        </Form.Group>
+
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label className="formfont">Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Password"
+            name="password"
+            value={register.password}
+            onChange={doChange}
+          />
+        </Form.Group>
+
+        <Button variant="info" type="submit">
+          Submit
+>>>>>>> cf0dc7a52bbc617437111ffb5ddc1c43f2453025
         </Button>
 			</Form>
 		</div>

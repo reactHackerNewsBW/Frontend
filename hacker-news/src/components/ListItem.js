@@ -35,7 +35,30 @@ const ListItem = props => {
 
             <Badge variant="primary" style={{ background: "green" }}>
 
+<<<<<<< HEAD
               <Link to={/edit/${id}}>Edit 🖊</Link>
+=======
+  return (
+    <div class="list-links">
+      <a href={url} className="list-links">
+        <ListGroup
+          id={id}
+          style={{
+            textAlign: "center",
+            marginBottom: "70px"
+          }}
+        >
+          <ListGroup.Item
+            action
+            variant="success"
+            style={{
+              textAlign: "center",
+              width: "700px"
+            }}
+          >
+            <Badge variant="secondary" style={{ background: "black" }}>
+              New
+>>>>>>> cf0dc7a52bbc617437111ffb5ddc1c43f2453025
             </Badge>
             
           &nbsp;&nbsp; &nbsp;&nbsp; {title}
