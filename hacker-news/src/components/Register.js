@@ -1,3 +1,8 @@
+/* Author: Abdelhierm 
+   Date: 11/22/2019
+   Copyright: Hacker News Clone ©, 2019
+*/
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
@@ -11,7 +16,7 @@ function clg(...exes) {
 
 const URL = "http://localhost:5000/api";
 
-export const Register = () => {
+export default function Register() {
   const [register, setRegister] = useState({
     username: "",
     password: "",

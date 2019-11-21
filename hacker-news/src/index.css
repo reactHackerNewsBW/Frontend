@@ -1,3 +1,9 @@
+:root {
+  --color-primary: #447604;
+  --color-secondary: #6CC551;
+  
+}
+
 body {
   margin: 0;
   background: rgb(97, 153, 26);

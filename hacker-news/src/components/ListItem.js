@@ -1,7 +1,5 @@
 import React from "react";
-import ListGroup from "react-bootstrap/ListGroup";
-import List from "./List";
-import Badge from "react-bootstrap/Badge";
+import antd from "antd";
 
 function clg(...x) {
   for (let exes of x) console.log(exes);

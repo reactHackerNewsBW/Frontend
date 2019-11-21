@@ -1,9 +1,12 @@
+<<<<<<< HEAD
+=======
 :root {
   --clr-vine: #000000;
 
   --clr-bg-main: var(--clr-vine);
 }
 
+>>>>>>> 1c651e65b037d71af006da490418801f5452ae91
 .App {
   text-align: center;
 }
