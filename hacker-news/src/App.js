@@ -1,15 +1,15 @@
 import React from "react";
 import {
   BrowserRouter as Router,
-  Route,
-  NavLink
+  Route
 } from "react-router-dom";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import List from "./components/List";
+import Footer from "./components/Footer";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Test } from "./components/test";
+import Navigation from "./components/Navigation";
 import MatrixParallax from "react-matrix-parallax";
 
 function App() {
@@ -17,24 +17,15 @@ function App() {
     <>
       <div className="App">
         <Router>
-          <div className="App-links">
-            <p>
-              <NavLink to="/login">Login </NavLink>
-            </p>
-            <p>
-              <NavLink to="/register">Register </NavLink>
-            </p>
-            <p>
-              <NavLink to="/list">Articles</NavLink>
-            </p>
-          </div>
+          <Navigation />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/list" component={List} />
-          <Route path="/test" component={Test} />
+          {/* <Route path="/" component={Footer}/> */}
 
           {/* <Route render={() => { return 404 }} /> */}
         </Router>
+        <Footer />
         {/* <Register /> */}
         <React.Fragment>
           <MatrixParallax
@@ -45,8 +36,9 @@ function App() {
             <h5 style={{ maxWidth: "100vw" }} />
           </MatrixParallax>
         </React.Fragment>
+        
       </div>
-      <Test />
+
     </>
   );
 }

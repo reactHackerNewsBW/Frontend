@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
+import Anime from "react-anime";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -50,6 +51,8 @@ export default function Register() {
   };
 
   return (
+    <Anime duration={8000} delay={(e, i) => i * 100}
+      scale={[.1, .9]}>
     <div className="Container">
       {/* <p style={{ fontWeight: "bold", color: "white", fontSize: "20px" }}>
         Register
@@ -112,5 +115,6 @@ export default function Register() {
         </Button>
       </Form>
     </div>
+    </Anime>
   );
 }

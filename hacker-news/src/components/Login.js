@@ -3,6 +3,7 @@ import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Anime from "react-anime";
 
 function clg(...exes) {
   for (let x of exes) console.log(x);
@@ -51,42 +52,47 @@ export default function Register() {
   };
 
   return (
-    <Card className="LoginPage">
-      <Form
-        onSubmit={registerAction}
-        style={{
-          border: "5px solid green",
-          padding: "40px",
-          borderRadius: "25px",
-          boxShadow: "5px 8px black"
-        }}
-      >
-        <Form.Group controlId="formBasicUsername">
-          <Form.Label className="formfont">Enter your username 📛</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder=". . . here"
-            name="username"
-            value={register.username}
-            onChange={doChange}
-          />
-        </Form.Group>
+    <Anime duration={8000} delay={(e, i) => i * 100}
+      scale={[.1, .9]}>
+      <Card className="Login">
+        <Form
+          onSubmit={registerAction}
+          style={{
+            border: "5px solid green",
+            padding: "40px",
+            borderRadius: "25px",
+            boxShadow: "5px 8px black"
+          }}
+        >
+          <Form.Group controlId="formBasicUsername">
+            <Form.Label className="formfont">Enter your username 📛</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder=". . . here"
+              name="username"
+              value={register.username}
+              onChange={doChange}
+            />
+          </Form.Group>
 
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label className="formfont">Enter your passkey 🗝</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder=". . . & here"
-            name="password"
-            value={register.password}
-            onChange={doChange}
-          />
-        </Form.Group>
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label className="formfont">Enter your passkey 🗝</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder=". . . & here"
+              name="password"
+              value={register.password}
+              onChange={doChange}
+            />
+          </Form.Group>
 
-        <Button variant="primary" type="submit">
-          Submit
+          <Button variant="primary" type="submit">
+            Sign In 
         </Button>
-      </Form>
-    </Card>
+        </Form>
+      </Card>
+
+    </Anime>
+
   );
 }

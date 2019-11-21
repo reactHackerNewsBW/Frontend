@@ -33,7 +33,7 @@ export default function List(props) {
 		<div>
 
 			{itemsAll.reverse().map(single => (
-				<Listitem single={single} key={single.id} />
+				<Listitem className="TEST" single={single} key={single.id} />
 			))}
 
 		</div>

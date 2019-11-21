@@ -37,6 +37,12 @@
 
 ## Attributions 🙏🏿
 
+* **CSS Keyframes | Animista**
+    * Licensed under FreeBSD License.
+    * http://animista.net/license for more info. 
+    * [Source](http://animista.net) 
+    * [Author](https://twitter.com/@cssanimista)
+
 ## Acknowledments
 
 ## Licensing 
