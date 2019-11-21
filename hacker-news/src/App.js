@@ -19,7 +19,7 @@ function App() {
     <>
       <div className="App">
         <Router>
-          <div className="App">
+          <div className="App-links">
             <p>
               <NavLink to="/login">Login </NavLink>
             </p>
