@@ -11,27 +11,28 @@ function clg(...x) {
 const URL = "https://bw-backend-hn.herokuapp.com/api"
 
 export default function List(props) {
-	const [item, setItem] = useState([])
+	const [itemsAll, setItemsAll] = useState([])
 
 	useEffect(() => {
 		const getList = () => {
 			axios
-			.get(`${URL}/stories`)
-			.then(res => {
-				clg(res.data)
-				setItem(res.data)
-			})
-			.catch(err => {
-				console.error(`>>> PROBLEM -- List > axios :: ${err}`)
-			})
+				.get(`${URL}/stories`)
+				.then(res => {
+					// clg(res.data)
+					setItemsAll(res.data)
+				})
+				.catch(err => {
+					console.error(`>>> PROBLEM -- List > axios :: ${err}`)
+				})
 		}
-		
+
 		getList();
-	},[])
+	}, [])
+
 
 	return (
 		<div>
-			{item.map(single => (
+			{itemsAll.reverse().map(single => (
 				<Listitem single={single} key={single.id}/>
 			))}
 		</div>

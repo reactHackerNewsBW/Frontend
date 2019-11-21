@@ -5,7 +5,7 @@ function clg(...x) {
 	for (let exes of x) console.log(exes);
 }
 
-const URL = "http://localhost:5000/api"
+const URL = "https://bw-backend-hn.herokuapp.com/api/auth/login"
 
 export default function Login(props) {
 	const [cred, setCred] = useState({ username: "", password: "", email: "" });
