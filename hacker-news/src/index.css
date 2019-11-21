@@ -1,10 +1,13 @@
 :root {
   --color-primary: #447604;
   --color-secondary: #6CC551;
-  
 }
 
 body {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
   margin: 0;
   background: rgb(97, 153, 26);
   background: radial-gradient(
@@ -35,3 +38,23 @@ code {
   align-items: center;
   height: 700px;
 }
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  background: black; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #171A1E; 
+    border-radius: 1000px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+

@@ -1,79 +1,128 @@
-<<<<<<< HEAD
-=======
 :root {
-  --clr-vine: #000000;
+	--clr-vine: #000000;
 
-  --clr-bg-main: var(--clr-vine);
+	--clr-bg-main: var(--clr-vine);
 }
-
->>>>>>> 1c651e65b037d71af006da490418801f5452ae91
+.App-links {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.App-links a:hover {
+	cursor: crosshair;
+	transition: 0.3s;
+	border: 1px green solid;
+	padding: 5px;
+	text-decoration: none;
+}
+.LoginPage {
+	width: 300px;
+	align: center;
+	background: transparent;
+}
 .App {
-  text-align: center;
-  font-family: "Share Tech Mono", monospace;
-  padding-top: 40px;
+	text-align: center;
+	font-family: "Share Tech Mono", monospace;
+	padding-top: 40px;
 }
 
 .App-logo {
-  height: 40vmin;
+	height: 40vmin;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
 }
 
 .App-link {
-  color: #09d3ac;
+	color: #09d3ac;
 }
 
 .Login {
-  display: flex;
-  align-items: center;
-  width: 45%;
-  height: 300px;
+	display: flex;
+	align-items: center;
+	width: 45%;
+	height: 300px;
 }
 
 .MatrixParallax-fullWindow-keni91 {
-  z-index: -1;
+	z-index: -1;
 }
 
 .title {
-  text-align: center;
-  font-family: "Orbitron", sans-serif;
-  font-weight: bold;
-  font-size: 100px;
+	text-align: center;
+	font-family: "Orbitron", sans-serif;
+	font-weight: bold;
+	font-size: 100px;
 
-  animation: blinker 3s linear infinite;
+	animation: blinker 3s linear infinite;
 }
 @keyframes blinker {
-  50% {
-    opacity: 0;
-  }
+	50% {
+		opacity: 0;
+	}
 }
 
 .formfont {
-  color: white;
-  font-weight: 900;
+	color: white;
+	font-weight: 900;
 }
 
 .active {
-  font-size: 30px;
+	font-size: 30px;
 }
 
 .list-links {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.list-links:hover {
+	-webkit-animation: jello-diagonal-1 0.77s ease-out infinite alternate-reverse both;
+	animation: jello-diagonal-1 0.77s ease-out infinite alternate-reverse both;
 }
 
 .App-links {
-  padding-bottom: 30px;
-  font-size: 20px;
+	padding-bottom: 30px;
+	font-size: 20px;
+}
+
+@-webkit-keyframes jello-diagonal-1 {
+	0% {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+	30% {
+		-webkit-transform: scale3d(0.75, 1.25, 1);
+		transform: scale3d(0.75, 1.25, 1);
+	}
+	40% {
+		-webkit-transform: scale3d(1.25, 0.75, 1);
+		transform: scale3d(1.25, 0.75, 1);
+	}
+	50% {
+		-webkit-transform: scale3d(0.85, 1.15, 1);
+		transform: scale3d(0.85, 1.15, 1);
+	}
+	65% {
+		-webkit-transform: scale3d(1.05, 0.95, 1);
+		transform: scale3d(1.05, 0.95, 1);
+	}
+	75% {
+		-webkit-transform: scale3d(0.95, 1.05, 1);
+		transform: scale3d(0.95, 1.05, 1);
+	}
+	100% {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
 }
