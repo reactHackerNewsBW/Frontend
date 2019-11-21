@@ -62,3 +62,10 @@
 .active {
   font-size: 30px;
 }
+
+.list-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

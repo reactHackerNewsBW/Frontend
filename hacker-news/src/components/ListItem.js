@@ -13,13 +13,12 @@ const ListItem = props => {
   clg(title);
 
   return (
-    <div>
+    <div class ="list-links">
       <a href={url} className="list-links">
         <ListGroup
           id={id}
           style={{
             textAlign: "center",
-            paddingLeft: "25%",
             marginBottom: "100px"
           }}
         >
