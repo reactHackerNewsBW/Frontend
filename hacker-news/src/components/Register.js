@@ -52,7 +52,9 @@ export const Register = () => {
 
   return (
     <div className="Container">
-      <p style={{ fontWeight: "bold" }}>Register</p>
+      <p style={{ fontWeight: "bold", color: "white", fontSize: "20px" }}>
+        Register
+      </p>
       <br />
       <Form
         onSubmit={registerAction}
@@ -64,7 +66,7 @@ export const Register = () => {
         }}
       >
         <Form.Group controlId="formBasicUsername">
-          <Form.Label>Username</Form.Label>
+          <Form.Label className="formfont">Username</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter username"
@@ -75,7 +77,7 @@ export const Register = () => {
         </Form.Group>
 
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label className="formfont">Email address</Form.Label>
           <Form.Control
             type="email"
             placeholder="Enter email"
@@ -96,7 +98,7 @@ export const Register = () => {
         </Form.Group>
 
         <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label className="formfont">Password</Form.Label>
           <Form.Control
             type="password"
             placeholder="Password"
