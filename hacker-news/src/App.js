@@ -4,6 +4,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import List from "./components/List";
 import AddEdit from "./components/AddEdit"
+import PrivateRoute from "./util/PrivateRoute"
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Test } from "./components/test";
@@ -28,7 +29,7 @@ function App(props) {
 						</p>
 						<p>
 							<Link to="/login">Login to existing</Link>
-							<Link className="space-plus" to="/" onClick={() => sessionStorage.clear()} >LOGOUT</Link>
+							{/* <Link className="space-plus" to="/" onClick={() => sessionStorage.clear()} >LOGOUT</Link> */}
 						</p>
 						<p>
 							<Link to="/register">Register new</Link>
@@ -40,18 +41,19 @@ function App(props) {
 							<Link to="/add">Add</Link>
 						</p>
 					</div>
-					<Route exact path="/login" component={Login} />
-					<Route exact path="/register" component={Register} />
-					<Route exact path="/list" component={List} />
-					<Route path="/add" component={AddEdit} />
-					<Route path="/edit/:id"
-						render={props => (
-							<AddEdit {...props} />
-						)}
-					/>
-					<Route path="/test" component={Test} />
+					<Switch>
+						<Route path="/login" component={Login} />
+						<Route path="/register" component={Register} />
+						<PrivateRoute path="/list"> <List /> </PrivateRoute>
+						<PrivateRoute path="/add"> <AddEdit /> </PrivateRoute>
+						<Route path="/edit/:id"
+							render={props => (
+								<PrivateRoute><AddEdit {...props} /></PrivateRoute>
+							)}
+						/>
+						{/* <Route path="/test" component={Test} /> */}
+					</Switch>
 
-					{/* <Route render={() => { return 404 }} /> */}
 				</Router>
 				{/* <Register /> */}
 				{/* <React.Fragment>

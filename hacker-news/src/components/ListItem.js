@@ -14,22 +14,24 @@ function clg(...x) {
 const ListItem = props => {
 	const { id, title, url } = props.single;
 
-	const delMeNow = id => {
+	const delMeNow = (e, id) => {
 		// https://bw-backend-hn.herokuapp.com/api/deletestories/:id
-		// e.preventDefault();
-		if (id < 21) {
+		e.preventDefault();
+		if (id < 20) {
+			clg(id);
 			console.error(">>>");
-			console.error(">>> WILL NOT PROCEED. Post ID < 21");
+			console.error(">>> WILL NOT PROCEED. Post ID < 20");
 			console.error(">>>");
 			return;
-		}
+		} else {
 		axios
 			.delete(`https://bw-backend-hn.herokuapp.com/api/deletestories/${id}`)
 			.then(res => {
 				clg(res)
-				// props.history.push("/list");
+				props.history.push("/list");
 			})
 			.catch(err => clg(`>>> PROBLEM AddEdit > axios :: ${err}`))
+		}
 	}
 
 	return (
@@ -48,7 +50,7 @@ const ListItem = props => {
             </Badge>
 						&nbsp;&nbsp; &nbsp;&nbsp; {title}
 						<Link className="space-plus" to={`/edit/${id}`}>edit</Link>
-						{/* <Link className="space-plus" onClick={delMeNow(id)}>DELETE</Link>						 */}
+						<button className="space-plus" onClick={e => delMeNow(e, id)}>DELETE</button>
 					</ListGroup.Item>
 				</ListGroup>
 			</a>
