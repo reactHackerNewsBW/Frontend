@@ -27,7 +27,6 @@ export default function AddEdit(props) {
 	// }
 
 	useEffect(() => {
-		// clg(">>> AddEdit > useEffect", (editID ? editID : "HA"))
 		if (editID) {
 			axios
 				.get(`https://bw-backend-hn.herokuapp.com/api/stories/${editID}`)

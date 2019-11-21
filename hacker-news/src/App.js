@@ -45,13 +45,16 @@ function App(props) {
 						<Route path="/login" component={Login} />
 						<Route path="/register" component={Register} />
 						<PrivateRoute path="/list"> <List /> </PrivateRoute>
-						<PrivateRoute path="/add"> <AddEdit /> </PrivateRoute>
+						<Route path="/add"
+							render={props => (
+								<PrivateRoute><AddEdit {...props} /></PrivateRoute>
+							)}
+						/>
 						<Route path="/edit/:id"
 							render={props => (
 								<PrivateRoute><AddEdit {...props} /></PrivateRoute>
 							)}
 						/>
-						{/* <Route path="/test" component={Test} /> */}
 					</Switch>
 
 				</Router>
