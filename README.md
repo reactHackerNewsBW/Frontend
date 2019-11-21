@@ -2,29 +2,13 @@
 <h1 align="center">Hacker News Clone 👩🏿‍💻</h1>
 <img align="right" src="https://img.shields.io/badge/Built%20with-React%20%E2%9A%9B-purple?style=flat&logo=appveyor">
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/76aa6289-1645-4ca3-b03d-a9e5fc951807/deploy-status)](https://app.netlify.com/sites/hackernewscl0ne/deploys)
 ## Usage  🔬
 
 ## Installation 🔨
 
-
-## Directory Tree 🌳 
-```bash
-├───public
-│   ├───css
-│   │   └───libs
-│   ├───imgs
-│   │   └───icons
-│   ├───js
-│   │   └───libs
-│   │       └───fa
-│   └───_less
-│      
-|───src
-│           
-└───package.json 
-│           
-└───README.md
-```
+1. run ```yarn start``` for a production build. 
+    * 
 
 
 ## Minimum Viable Project 
