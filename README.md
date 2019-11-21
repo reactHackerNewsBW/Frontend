@@ -15,9 +15,9 @@
 
 
 ## Authors
-### ```(jffry (dsr))``` | React ⚛ UI/UX Developer 
+<img src="/hacker-news/public/jeffrey.png">
 
-### ```abderahim``` | React ⚛ UI/UX Developer
+| ```(jffry (dsr))``` | React ⚛ UI/UX Developer |  ```abderahim``` | React ⚛ UI/UX Developer
 
 ## Attributions 🙏🏿
 
