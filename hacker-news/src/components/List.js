@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom"
-
+import Anime from "react-anime";
 import axios from 'axios';
 import Listitem from "./ListItem";
 
@@ -29,12 +29,13 @@ export default function List(props) {
 		getList();
 	}, [])
 
-
 	return (
 		<div>
+
 			{itemsAll.reverse().map(single => (
-				<Listitem single={single} key={single.id}/>
+				<Listitem className="TEST" single={single} key={single.id} />
 			))}
+
 		</div>
 	)
 }
