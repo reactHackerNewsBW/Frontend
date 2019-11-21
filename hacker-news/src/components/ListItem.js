@@ -26,11 +26,17 @@ const ListItem = props => {
             <Badge variant="secondary" style={{ background: "black" }}>
               New
             </Badge>
-            &nbsp;&nbsp; &nbsp;&nbsp; {title}
+
+            <Badge variant="primary" style={{ background: "green" }}>
+
+              <Link to={/edit/${id}}>Edit 🖊</Link>
+            </Badge>
+            
+          &nbsp;&nbsp; &nbsp;&nbsp; {title}
           </ListGroup.Item>
         </ListGroup>
       </a>
-    </div>
+    </div >
   );
 };
 

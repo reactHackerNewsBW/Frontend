@@ -1,33 +1,58 @@
+/* Author: jffrydsr 
+   Date: 11/22/2019
+   Copyright: Hacker News Clone ©, 2019
+*/
 import React from "react";
-import { Form, Icon, Input, Button, Checkbox, Card } from "antd";
-import "antd/dist/antd.css";
+import { useState, useEffect } from 'react';
+import { Card, Form, Label, Input, FormGroup } from 'react-bootstrap';
 
 export default function Login() {
-  const submit = () => {console.log("Sumission Test")};
+
+  const [isSignin, setIsSignin] = useState({
+    username: "",
+    password: "",
+  });
+
+  const submitForm = (event) => {
+    do {
+      event.preventDefault();
+    }
+  };
 
   return (
-    <Card className="Login Form">
-      <Form onSubmit={submit} className="login-form">
-        <Form.Item>
-          <Input
-            prefix={<Icon type="user" style={{}} />}
-            placeholder="Username"
-          />
-        </Form.Item>
-        <Form.Item>
-          <Input
-            type="password"
-            prefix={<Icon type="key" style={{}} />}
-            placeholder="Password"
-          />
-        </Form.Item>
+    <Card className="LoginPage">
+      <Form>
 
-        <Form.Item>
-          <Button type="primary" size="large">
-            Login!
-          </Button>
-        </Form.Item>
+        <FormGroup>
+          <Label for="exampleEmail">Email</Label>
+          <Input type="email" name="email" id="login_email" placeholder="what's your email? :information_desk_person::skin-tone-6:‍" />
+        </FormGroup>
+
+        <FormGroup>
+          <Label for="examplePassword">Password</Label>
+          <Input type="password" name="password" id="login_password" placeholder="what's your password? :key:" />
+        </FormGroup>
+
+        <FormGroup tag="fieldset">
+          <legend>Remember this device?</legend>
+
+          <FormGroup check>
+            <Label check>
+              <Input type="radio" name="login_remember" />{' '}
+              Yes
+          </Label>
+
+            <Label check>
+              <Input type="radio" name="login_remember" />{' '}
+              Yes
+          </Label>
+          </FormGroup>
+        </FormGroup>
+
+        <FormGroup>
+          <Button class="submitButton">Sign In</Button>
+        </FormGroup>
       </Form>
     </Card>
-  );
-}
+  )
+};
