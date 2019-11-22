@@ -28,7 +28,8 @@ const ListItem = props => {
 			.delete(`https://bw-backend-hn.herokuapp.com/api/deletestories/${id}`)
 			.then(res => {
 				clg(res)
-				props.history.push("/list");
+				// props.history.push("/list");
+				window.location.reload();
 			})
 			.catch(err => clg(`>>> PROBLEM AddEdit > axios :: ${err}`))
 		}

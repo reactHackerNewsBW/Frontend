@@ -14,18 +14,6 @@ export default function AddEdit(props) {
 	const [editID] = useState(props.match.params.id) //props.match.params.id
 	const [editFields, setEditFields] = useState({});
 
-	// clg(">>> AddEdit", (editID ? editID : "HA"))
-
-	// const getStory = () => {
-	// 	axios
-	// 		.get(`https://bw-backend-hn.herokuapp.com/api/stories/${editID}`)
-	// 		.then(res => {
-	// 			clg(">>> AddEdit > getStory", res.data)
-	// 			clg(res)
-	// 		})
-	// 		.catch(err => clg(`>>> PROBLEM Register > axios :: ${err}`))
-	// }
-
 	useEffect(() => {
 		if (editID) {
 			axios
@@ -47,13 +35,26 @@ export default function AddEdit(props) {
 	// form submit
 	const editAction = e => {
 		e.preventDefault();
-		axios
-			.post(URL, { title: editFields.title, url: editFields.url })
-			.then(res => {
-				clg(res)
-				// props.history.push("/list");
-			})
-			.catch(err => clg(`>>> PROBLEM AddEdit > axios :: ${err}`))
+		clg(editID);
+		if (editID) { // check if we're on the edit form.
+			clg(">>> ADDEDIT (edit) > editAction PUT > sending: put(URL, { title: editFields.title, url: editFields.url }")
+			axios
+				.put(`https://bw-backend-hn.herokuapp.com/api/updatestories/${editID}`, { title: editFields.title, url: editFields.url })
+				.then(res => {
+					clg(res)
+					props.history.push("/list");
+				})
+				.catch(err => clg(`>>> PROBLEM AddEdit (edit) > axios :: ${err}`))
+		} else {
+			clg(">>> ADDEDIT (add) > editAction POST > sending: post(URL, { title: editFields.title, url: editFields.url }")
+			axios
+				.post(`https://bw-backend-hn.herokuapp.com/api/poststories`, { title: editFields.title, url: editFields.url })
+				.then(res => {
+					clg(res)
+					props.history.push("/list");
+				})
+				.catch(err => clg(`>>> PROBLEM AddEdit (add) > axios :: ${err}`))
+		}
 	}
 
 	let pagetitle;
