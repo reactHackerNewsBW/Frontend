@@ -17,9 +17,8 @@ export default function Register() {
     password: "",
     email: ""
   });
+  
   const [isRegged, setIsRegged] = useState(false);
-
-  //#endregion styled
 
   // control form fields
   const doChange = e => {
