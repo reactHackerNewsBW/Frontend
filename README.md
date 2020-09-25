@@ -16,6 +16,7 @@
 
 ## Authors
 <img src="/hacker-news/public/jeffrey.png">
+https://avatars0.githubusercontent.com/u/53605229?s=400&u=5754442c1166ecfbcc14ef9b43ad1248ef88fc43&v=4
 
 | ```(jffry (dsr))``` | React ⚛ UI/UX Developer |  ```abderahim``` | React ⚛ UI/UX Developer
 
